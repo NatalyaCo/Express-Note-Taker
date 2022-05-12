@@ -54,3 +54,7 @@ app.route("/api/notes")
         });
         res.json(newNote);
     });
+
+app.listen(PORT, function () {
+    console.log("Listening using PORT " + PORT);
+});
