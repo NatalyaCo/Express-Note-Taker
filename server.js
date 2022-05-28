@@ -4,7 +4,6 @@ const path = require("path");
 const database = require("./db/db.json")
 
 const app = express();
-
 const PORT = 3001;
 
 app.use(express.json());
@@ -19,7 +18,7 @@ app.get("/", function (req, res) {
 
 app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
-})
+});
 
 app.route("/api/notes")
 
@@ -30,7 +29,7 @@ app.route("/api/notes")
     .post(function (req, res) {
         let jsonFilePath = path.join(__dirname, "/db/db.json");
         let newNote = req.body;
-        let highestId = 22;
+        let highestId = 99;
 
         for (let i = 0; i < database.length; i++) {
             let individualNote = database[i];
@@ -54,6 +53,30 @@ app.route("/api/notes")
         });
         res.json(newNote);
     });
+
+
+    app.delete("/api/notes/:id", function (req, res) {
+        let jsonFilePath = path.join(__dirname, "/db/db.json");
+        // request to delete note by id.
+        for (let i = 0; i < database.length; i++) {
+    
+            if (database[i].id == req.params.id) {
+               database.splice(i, 1);
+                break;
+            }
+        }
+       
+        fs.writeFileSync(jsonFilePath, JSON.stringify(database), function (err) {
+    
+            if (err) {
+                return console.log(err);
+            } else {
+                console.log("Your note was deleted!");
+            }
+        });
+        res.json(database);
+    });
+    
 
 app.listen(PORT, function () {
     console.log("Listening using PORT " + PORT);
