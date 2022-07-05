@@ -25,5 +25,8 @@ In order to test open the console and run the following:
 If you have any questions contact me on [GitHub](https://github.com/natalyaco) or contact 
 Natalya Colburn at natalya.c2022@yahoo.com  
  
+ For a video walk-through click on the link below:
  https://drive.google.com/uc?id=1kv5ddLRv-D-dkG8xQdnjlbfzFtGVEdfR&export=download
  
+![Screenshot (267)](https://user-images.githubusercontent.com/99770212/177404557-565ba13d-ca66-4d6b-9e70-6609640660ef.png)
+![Screenshot (268)](https://user-images.githubusercontent.com/99770212/177404590-51b85f3d-da10-4f03-bba2-e369b78ed118.png)
